@@ -353,6 +353,8 @@ typedef enum {
 	PGP_PKA_RESERVED_DH = 21,	/* Reserved for Diffie-Hellman
 					 * (X9.42, as defined for
 					 * IETF-S/MIME) */
+	PGP_PKA_EDDSA = 22,	/* Reserved for EDDSA (proposed -
+				 * [I-D.irtf-cfrg-eddsa]) */
 	PGP_PKA_PRIVATE00 = 100,/* Private/Experimental Algorithm */
 	PGP_PKA_PRIVATE01 = 101,/* Private/Experimental Algorithm */
 	PGP_PKA_PRIVATE02 = 102,/* Private/Experimental Algorithm */
@@ -482,7 +484,8 @@ typedef enum {
 	PGP_SA_TWOFISH = 10,	/* Twofish with 256-bit key (TWOFISH) */
 	PGP_SA_CAMELLIA_128 = 100,	/* Camellia with 128-bit key (CAMELLIA) */
 	PGP_SA_CAMELLIA_192 = 101,	/* Camellia with 192-bit key */
-	PGP_SA_CAMELLIA_256 = 102	/* Camellia with 256-bit key */
+	PGP_SA_CAMELLIA_256 = 102,	/* Camellia with 256-bit key */
+	PGP_SA_SALSA20 = 103		/* Salsa 20 with 256-bit key */
 } pgp_symm_alg_t;
 
 #define PGP_SA_DEFAULT_CIPHER	PGP_SA_CAST5
