@@ -808,6 +808,7 @@ static str2cipher_t	str2cipher[] = {
 	{	"camellia128",		PGP_SA_CAMELLIA_128	},
 	{	"camellia256",		PGP_SA_CAMELLIA_256	},
 	{	"tripledes",		PGP_SA_TRIPLEDES	},
+	{	"salsa20",		PGP_SA_SALSA20		},
 	{	NULL,			0			}
 };
 
