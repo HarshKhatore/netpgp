@@ -69,7 +69,7 @@
 #define USER_ATTRIBUTE_PKT		17
 
 /* only allow certain packets at certain times */
-#define PUBRING_ALLOWED			"\002\006\014\015\016\021"
+#define PUBRING_ALLOWED			"\002\006\014\015\016\021\022"
 #define SIGNATURE_ALLOWED		"\002\004\010\013"
 
 /* actions to do on close */
@@ -85,6 +85,7 @@
 #define PUBKEY_ELLIPTIC_CURVE		18
 #define PUBKEY_ECDSA			19
 #define PUBKEY_ELGAMAL_ENCRYPT_OR_SIGN	20
+#define PUBKEY_EDDSA			22
 
 /* hash algorithm definitions */
 #define PGPV_HASH_MD5			1
@@ -1320,10 +1321,11 @@ static const char	*keyalgs[] = {
 	"DSA",
 	"Elliptic Curve",
 	"ECDSA",
-	"Elgamal (Encrypt or Sign)"
+	"Elgamal (Encrypt or Sign)",
+	"EDDSA"
 };
 
-#define MAX_KEYALG	21
+#define MAX_KEYALG	22
 
 static const char *keyalgmap = "\0\01\02\03\0\0\0\0\0\0\0\0\0\0\0\0\04\05\06\07\010\011";
 
@@ -1349,6 +1351,8 @@ numkeybits(const pgpv_pubkey_t *pubkey)
 	case PUBKEY_ELGAMAL_ENCRYPT:
 	case PUBKEY_ELGAMAL_ENCRYPT_OR_SIGN:
 		return pubkey->bn[ELGAMAL_P].bits;
+	case PUBKEY_EDDSA:
+		return 0;	/* change this */
 	default:
 		return 0;
 	}
