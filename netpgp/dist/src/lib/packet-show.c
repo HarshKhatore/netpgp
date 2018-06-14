@@ -219,6 +219,7 @@ static pgp_map_t pubkey_alg_map[] =
 	{PGP_PKA_RESERVED_ECDSA, "Reserved for ECDSA"},
 	{PGP_PKA_ELGAMAL_ENCRYPT_OR_SIGN, "Reserved (formerly Elgamal Encrypt or Sign"},
 	{PGP_PKA_RESERVED_DH, "Reserved for Diffie-Hellman (X9.42)"},
+	{PGP_PKA_EDDSA, "EdDSA [I-D.irtf-cfrg-eddsa]",
 	{PGP_PKA_PRIVATE00, "Private/Experimental"},
 	{PGP_PKA_PRIVATE01, "Private/Experimental"},
 	{PGP_PKA_PRIVATE02, "Private/Experimental"},
@@ -247,6 +248,7 @@ static pgp_map_t symm_alg_map[] =
 	{PGP_SA_CAMELLIA_128, "Camellia (128-bit key)"},
 	{PGP_SA_CAMELLIA_192, "Camellia (192-bit key)"},
 	{PGP_SA_CAMELLIA_256, "Camellia (256-bit key)"},
+	{PGP_SA_SALSA20, "Salsa20 (256-bit key)"},
 	{0x00, NULL},		/* this is the end-of-array marker */
 };
 
